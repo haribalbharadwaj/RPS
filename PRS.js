@@ -147,7 +147,7 @@ function appendPlayagain() {
 
     updateScore();
 
-    window.location.href = 'PRSfront.html';
+    window.location.href = 'index.html';
 }
 
 function appendReplay() {
@@ -162,7 +162,7 @@ function appendReplay() {
 
     updateScore();
 
-    window.location.href = 'PRSfront.html';
+    window.location.href = 'index.html';
 }
 
 function appendRules() {
