@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPShurray</title>
+    <link rel="stylesheet" href="PRShurray.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dangrek&display=swap">
+    <script> src="PRS.js" </script>
+
+</head>
+<body class="F1">
+    <div class="F2">
+        <img class="S1" src="/PRS/Star.png" >
+        <img class="S2" src="/PRS/Prize.png">
+    </div>
+    <button class="F8" onclick="appendRules()"><span>RULES</span></button>
+    <button class="F10" onclick="appendPlayagain()"><span>PLAY AGAIN</span></button>
+
+    <div class="F11">
+        <p>HURRAY!!</p>
+        <span>YOU WON THE GAME</span>
+    </div>
+
+    <div id="rulesPopup" class="rules-popup" style="display:none;">
+        <button class="close-btn" onclick="closeRulesPopup()"></button>
+        <p class="bt-text">X</p>
+        <div class="rules-text">
+            <p>Game Rules</p>
+            <ul>
+                <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</li>
+                <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time.</li>
+                <li>If both players lay down the same hand, each player lays down another hand.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="PRS.js" ></script>
+    <script>
+        function appendPlayagain() {
+            window.location.href = 'PRSfront.html'; 
+        }
+
+
+        function appendRules() {
+            var rulesPopup = document.getElementById("rulesPopup");
+            rulesPopup.style.display = "block";
+            }
+
+        function closeRulesPopup() {
+            var rulesPopup = document.getElementById("rulesPopup");
+            rulesPopup.style.display = "none";
+        }
+
+    </script>
+    
+</body>
+</html>

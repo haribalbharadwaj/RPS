@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPStie</title>
+
+    <link rel="stylesheet" href="PRStie.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dangrek&display=swap">
+    
+
+</head>
+<body class="F1">
+
+    <div class="F2">
+    </div>
+        <span class="p">ROCK <br>PAPER<br> SCISSORS</span>
+        <div class="F3">
+            <p>COMPUTER <br> SCORE</p>
+        </div>
+        <span class="computer-Score">0</span>
+        <div class="F4">
+            <p>YOUR <br>SCORE</p>
+        </div>
+        <span class="user-Score">0</span>
+
+
+    <button class="F8" onclick="appendRules()"><span>RULES</span></button>
+    <div class="F9">
+
+    </div>
+    <div class="F5">
+        <p>YOU PICKED</p>
+    </div>
+    <div class="F6">
+        <p>PC PICKED</p>
+    </div>
+
+    <div id="rulesPopup" class="rules-popup" style="display:none;">
+        <button class="close-btn" onclick="closeRulesPopup()"></button>
+        <p class="bt-text">X</p>
+        <div class="rules-text">
+            <p>Game Rules</p>
+            <ul>
+                <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</li>
+                <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time.</li>
+                <li>If both players lay down the same hand, each player lays down another hand.</li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div is="choices-container">
+        <img src="#"  id="human-choice-img">
+        
+        <img src="#"  id="computer-choice-img">
+    </div>
+
+    <button class="F10" onclick="appendReplay()"><span>REPLAY</span></button>
+
+    <div class="F11">
+        <p>TIE UP</p>
+    </div>
+
+    <script src="PRS.js" ></script>
+    
+    <script>
+        //let userScore =localStorage.getItem('user-Score') || 0;
+        //let computerScore=localStorage.getItem('computer-Score') || 0;
+
+        // Retrieve user and computer choices from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const userChoice = urlParams.get('user');
+        const computerChoice = urlParams.get('computer');
+
+        // Set images based on choices
+        document.getElementById('human-choice-img').src = getUserImagePath(userChoice, '/PRS/default_human.png');
+        document.getElementById('computer-choice-img').src = getComputerImagePath(computerChoice, '/PRS/default_computer.png');
+
+        updateScore();
+
+
+        function appendRules() {
+            var rulesPopup = document.getElementById("rulesPopup");
+            rulesPopup.style.display = "block";
+            }
+
+        function closeRulesPopup() {
+            var rulesPopup = document.getElementById("rulesPopup");
+            rulesPopup.style.display = "none";
+        }
+
+    </script>
+    
+
+
+    
+</body>
+</html>

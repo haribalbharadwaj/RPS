@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPS</title>
+    <link rel="stylesheet" href="PRSfront.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dangrek&display=swap">
+
+</head>
+
+<body class="F1">
+    
+    <div>
+        <div class="F2">
+
+        </div>
+            <span class="p">ROCK <br>PAPER<br> SCISSORS</span>
+            <div class="F3">
+                <p>COMPUTER <br> SCORE</p>
+            </div>
+            <span class="computer-Score"></span>
+            <div class="F4">
+                <p>YOUR <br>SCORE</p>
+            </div>
+            <span class="user-Score"></span>
+    </div>
+
+    <div id="rulesPopup" class="rules-popup" style="display:none;">
+            <button class="close-btn" onclick="closeRulesPopup()"></button>
+            <p class="bt-text">X</p>
+            <div class="rules-text">
+                <p>Game Rules</p>
+                <ul>
+                    <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                    <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</li>
+                    <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time.</li>
+                    <li>If both players lay down the same hand, each player lays down another hand.</li>
+                </ul>
+            </div>
+    </div>
+
+    <button class="F7" onclick="appendRules()"><span>RULES</span></button>
+
+    <div class="L1"></div>
+
+    <div class="L2"></div>
+
+    <div class="L3"></div>
+
+    <button class="Rock" onclick="playGame('rock'); updateScore();"><img src="/PRS/Rock.png"></button>
+
+    <button class="Scissor" onclick="playGame('scissor'); updateScore();"><img src="/PRS/Scissor.png"> </button>
+
+    <button class="Paper" onclick="playGame('paper'); updateScore();"><img src="/PRS/Paper.png"></button>
+
+    <div id="choices-container">
+        <img src="#"  id="human-choice-img">
+        <img src="#"  id="computer-choice-img">
+    </div>
+    
+
+    </div>
+    <script src="PRS.js"></script>
+    <script>
+       // let userScore =localStorage.getItem('user-Score') || 0;
+        //let computerScore=localStorage.getItem('computer-Score') || 0;
+
+        // Retrieve user and computer choices from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const userChoice = urlParams.get('computer');
+        const computerChoice = urlParams.get('user');
+
+        // Set images based on choices
+        document.getElementById('human-choice-img').src = getUserImagePath(userChoice, '/PRS/human.png');
+        document.getElementById('computer-choice-img').src = getComputerImagePath(computerChoice, '/PRS/computer.png');
+
+        updateScore();
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+        // Get the image elements for user choice and computer choice
+        const humanChoiceImg = document.getElementById('human-choice-img');
+        const computerChoiceImg = document.getElementById('computer-choice-img');
+
+        
+        humanChoiceImg.src = '';
+        computerChoiceImg.src = '';
+
+    
+        });
+    </script>
+
+
+</body>
+</html>
