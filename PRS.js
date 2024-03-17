@@ -98,7 +98,7 @@ function getUserImagePath(userChoice) {
         'scissor': 'Scissor.png',
         'paper': 'Paper.png'
     };
-    return userImagePaths.hasOwnProperty(userChoice) ? `/PRS/${userImagePaths[userChoice]}`: '/PRS/default_human.png';
+    return userImagePaths.hasOwnProperty(userChoice) ? `/RPS/${userImagePaths[userChoice]}`: '/RPS/default_human.png';
 }
 
 function getComputerImagePath(computerChoice) {
@@ -107,7 +107,7 @@ function getComputerImagePath(computerChoice) {
         'scissor': 'Scissor.png',
         'paper': 'Paper.png'
     };
-    return computerImagePaths.hasOwnProperty(computerChoice) ? `/PRS/${computerImagePaths[computerChoice]}` : '/PRS/default_computer.png';
+    return computerImagePaths.hasOwnProperty(computerChoice) ? `/RPS/${computerImagePaths[computerChoice]}` : '/RPS/default_computer.png';
 }
 
 function resetScoresAndUI() {
